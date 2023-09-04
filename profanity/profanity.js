@@ -17,25 +17,11 @@ function changeWords() {
   if (clickNo < 1) {
     clickNo++;
     curseWords.forEach((element) => {
-      text = text.replace(element.bad, element.good);
-      // element.classList.add("highlight");
-      textElement.textContent = text;
+      text = text.replaceAll(element.bad, `<span>${element.good}</span>`);
+      //`<span>${element.good}</span>`
+      textElement.innerHTML = text;
     });
   } else {
     dia.show();
   }
 }
-
-// console.log(filterOn("type", "cat"));
-// console.log(filterOn("type", "dog"));
-// console.log(filterOn("name", "ScoobyDoo"));
-
-// function filterOn(key, value) {
-//   return animals.filter((animal) => {
-//     if (animal[key] === value) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   });
-// }
